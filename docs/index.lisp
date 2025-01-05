@@ -43,6 +43,8 @@
                                    "HTTP"
                                    "TODO"
                                    "Unlicense"
+                                   "UML"
+                                   "PlantUML"
                                    "REPL"
                                    "ASDF:PACKAGE-INFERRED-SYSTEM"
                                    "ASDF"
