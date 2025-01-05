@@ -15,8 +15,6 @@
   (:import-from #:40ants-doc-full/commondoc/image
                 #:local-image)
   (:import-from #:40ants-plantuml)
-  (:import-from #:40ants-doc/reference-api
-                #:canonical-reference)
   (:import-from #:40ants-doc/object-package
                 #:object-package)
   (:nicknames #:40ants-doc-plantuml/core)
