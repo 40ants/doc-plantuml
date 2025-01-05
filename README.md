@@ -12,7 +12,7 @@
 * Homepage: [https://40ants.com/doc-plantuml][30dd]
 * Bug tracker: [https://github.com/40ants/doc-plantuml/issues][95d4]
 * Source control: [GIT][a2c9]
-* Depends on: [40ants-doc][2c00], [40ants-doc-full][a797], [40ants-plantuml][80dc], [serapeum][c41d], [str][ef7f]
+* Depends on: [40ants-doc][2c00], [40ants-doc-full][a797], [40ants-plantuml][80dc], [common-doc][fceb], [serapeum][c41d], [str][ef7f]
 
 [![](https://github-actions.40ants.com/40ants/doc-plantuml/matrix.svg?only=ci.run-tests)][20ac]
 
@@ -45,7 +45,7 @@ You can install this library from Quicklisp, but you want to receive updates qui
 
 <a id="x-28-23A-28-2819-29-20BASE-CHAR-20-2E-20-2240ANTS-DOC-PLANTUML-22-29-20PACKAGE-29"></a>
 
-#### [package](2130) `40ants-doc-plantuml`
+#### [package](d43d) `40ants-doc-plantuml`
 
 <a id="x-2840ANTS-DOC-PLANTUML-DOCS-2FINDEX-3A-3A-7C-4040ANTS-DOC-PLANTUML-3FMacros-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -53,18 +53,19 @@ You can install this library from Quicklisp, but you want to receive updates qui
 
 <a id="x-2840ANTS-DOC-PLANTUML-3ADEFDIAGRAM-20-2840ANTS-DOC-2FLOCATIVES-3AMACRO-29-29"></a>
 
-##### [macro](d22d) `40ants-doc-plantuml:defdiagram` name nil &body code
+##### [macro](acce) `40ants-doc-plantuml:defdiagram` name nil &body code
 
 
 [30dd]: https://40ants.com/doc-plantuml
 [a2c9]: https://github.com/40ants/doc-plantuml
 [20ac]: https://github.com/40ants/doc-plantuml/actions
-[2130]: https://github.com/40ants/doc-plantuml/blob/8c130ef776fd2ec84e6b99004586f3e51ec6e774/src/core.lisp#L1
-[d22d]: https://github.com/40ants/doc-plantuml/blob/8c130ef776fd2ec84e6b99004586f3e51ec6e774/src/core.lisp#L32
+[d43d]: https://github.com/40ants/doc-plantuml/blob/9002d82ffb4662aafe3a64b5e1a708d48401c39a/src/core.lisp#L1
+[acce]: https://github.com/40ants/doc-plantuml/blob/9002d82ffb4662aafe3a64b5e1a708d48401c39a/src/core.lisp#L32
 [95d4]: https://github.com/40ants/doc-plantuml/issues
 [2c00]: https://quickdocs.org/40ants-doc
 [a797]: https://quickdocs.org/40ants-doc-full
 [80dc]: https://quickdocs.org/40ants-plantuml
+[fceb]: https://quickdocs.org/common-doc
 [c41d]: https://quickdocs.org/serapeum
 [ef7f]: https://quickdocs.org/str
 
