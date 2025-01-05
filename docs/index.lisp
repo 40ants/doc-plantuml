@@ -17,6 +17,8 @@
                 #:defautodoc)
   (:import-from #:40ants-doc-plantuml
                 #:defdiagram)
+  (:import-from #:serapeum
+                #:eval-always)
   (:export #:@index
            #:@readme
            #:@changelog))
@@ -107,15 +109,30 @@ You can install this library from Quicklisp, but you want to receive updates qui
 """)
 
 
-(defsection @short-usage (:title "Usage")
-  "
+(eval-always
+  (defparameter *shared-doc* "
 Use DEFDIAGRAM macro to define a diagram:
 
 ```
 (defdiagram @demo ()
   \"
 @startuml
-Bob -> Alice : hello
+start
+if (Are you\\nusing\\nCommon Lisp?) then (yes)
+  label space1
+  label space2
+  :Cool!;
+else (no)
+  :Go learn it!;
+  if (Do you know\\nwhere\\nto start?) then (yes)
+    :Just do it!;
+  else (no)
+    :Open lisp-lang.org;
+  endif
+  :Join the\\ncommunity.;
+endif
+:You are\\nmarvelous!;
+end
 @enduml
 \")
 ```
@@ -127,32 +144,21 @@ Then you can include this diagram into a documentation section:
   \"Here is our diagram:\"
   (@demo diagram))
 ```
+"))
+
+
+(defsection @short-usage (:title "Usage")
+  #.*shared-doc*
+  "
+and image will be rendered like this:
+
+![](https://40ants.com/doc-plantuml/images/demo.png)
 ")
 
 
 (defsection @usage (:title "Usage")
-  "
-Use DEFDIAGRAM macro to define a diagram:
-
-```
-(defdiagram @demo ()
-  \"
-@startuml
-Bob -> Alice : hello
-@enduml
-\")
-```
-
-Then you can include this diagram into a documentation section:
-
-```
-(defsection @example (:title \"Example\")
-  \"Here is our diagram:\"
-  (@demo diagram))
-```
-
-and image will be rendered like this:
-"
+  #.*shared-doc*
+  "and image will be rendered like this:"
   (@demo diagram))
 
 
