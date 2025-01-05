@@ -110,12 +110,7 @@ You can install this library from Quicklisp, but you want to receive updates qui
 
 
 (eval-always
-  (defparameter *shared-doc* "
-Use DEFDIAGRAM macro to define a diagram:
-
-```
-(defdiagram @demo ()
-  \"
+  (defparameter *diagram-code* "
 @startuml
 start
 if (Are you\\nusing\\nCommon Lisp?) then (yes)
@@ -134,6 +129,16 @@ endif
 :You are\\nmarvelous!;
 end
 @enduml
+")
+
+  
+  (defparameter *shared-doc* (format nil "
+Use DEFDIAGRAM macro to define a diagram:
+
+```
+(defdiagram @demo ()
+  \"
+~A
 \")
 ```
 
@@ -144,7 +149,8 @@ Then you can include this diagram into a documentation section:
   \"Here is our diagram:\"
   (@demo diagram))
 ```
-"))
+"
+                                     *diagram-code*)))
 
 
 (defsection @short-usage (:title "Usage")
@@ -163,11 +169,7 @@ and image will be rendered like this:
 
 
 (defdiagram @demo ()
-  "
-@startuml
-Bob -> Alice : hello
-@enduml
-")
+  *diagram-code*)
 
 
 (defautodoc @api (:system "40ants-doc-plantuml"))
