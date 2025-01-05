@@ -15,6 +15,10 @@
   (:import-from #:40ants-doc-full/commondoc/image
                 #:local-image)
   (:import-from #:40ants-plantuml)
+  (:import-from #:40ants-doc/reference-api
+                #:canonical-reference)
+  (:import-from #:40ants-doc/object-package
+                #:object-package)
   (:nicknames #:40ants-doc-plantuml/core)
   (:export #:defdiagram))
 (in-package #:40ants-doc-plantuml)
@@ -26,10 +30,18 @@
              :reader diagram-filename)
    (code :initarg :code
          :type string
-         :reader diagram-code)))
+         :reader diagram-code)
+   (bound-to :initarg :bound-to
+             :type (or null symbol)
+             :initform nil
+             :reader diagram-bound-to)))
 
 
 (defmacro defdiagram (name () &body code)
+  "This macro creates a diagram object and binds it to a variable with given NAME.
+
+   Forms given in the body, should return a string in the format of `PlantUML` diagram.
+   This could be a simple string or one or more lisp forms."
   (check-type name symbol)
 
   (let ((filename (fmt "images/~A.png"
@@ -38,17 +50,23 @@
     `(defparameter ,name
        (make-instance 'diagram
                       :filename ,filename
-                      :code (progn ,@code)))))
+                      :code (progn ,@code)
+                      :bound-to ',name))))
 
 
 (define-locative-type diagram ()
-  "Refers to a PlantUML diagram.")
+  "Refers to a `PlantUML` diagram.")
 
 
 (defmethod locate-object (symbol (locative-type (eql 'diagram)) locative-args)
   (let ((diagram (symbol-value symbol)))
     (check-type diagram diagram)
     (values diagram)))
+
+
+(defmethod object-package ((object diagram))
+  (when (diagram-bound-to object)
+    (symbol-package (diagram-bound-to object))))
 
 
 (defmethod to-commondoc ((diagram diagram))

@@ -15,6 +15,8 @@
                 #:docs-config)
   (:import-from #:40ants-doc/autodoc
                 #:defautodoc)
+  (:import-from #:40ants-doc-plantuml
+                #:defdiagram)
   (:export #:@index
            #:@readme
            #:@changelog))
@@ -34,8 +36,7 @@
   
   (list :theme
         (find-symbol "40ANTS-THEME"
-                     (find-package "40ANTS-DOC-THEME-40ANTS")))
-  )
+                     (find-package "40ANTS-DOC-THEME-40ANTS"))))
 
 
 (defsection @index (:title "40ants-doc-plantuml - An extension to 40ants-doc Common Lisp documentation library to render PlantUML diagrams inside of the documentation."
@@ -65,7 +66,33 @@
   (@api section))
 
 
-(defsection-copy @readme @index)
+(defsection @readme (:title "40ants-doc-plantuml - An extension to 40ants-doc Common Lisp documentation library to render PlantUML diagrams inside of the documentation."
+                     :ignore-words ("JSON"
+                                    "HTTP"
+                                    "TODO"
+                                    "Unlicense"
+                                    "UML"
+                                    "PlantUML"
+                                    "REPL"
+                                    "ASDF:PACKAGE-INFERRED-SYSTEM"
+                                    "ASDF"
+                                    "40A"
+                                    "API"
+                                    "URL"
+                                    "URI"
+                                    "RPC"
+                                    "GIT"))
+  (40ants-doc-plantuml system)
+  "
+[![](https://github-actions.40ants.com/40ants/doc-plantuml/matrix.svg?only=ci.run-tests)](https://github.com/40ants/doc-plantuml/actions)
+
+![Quicklisp](http://quickdocs.org/badge/40ants-doc-plantuml.svg)
+"
+  (@installation section)
+  ;; Because generated diagram images can't be published in the "master" branch
+  ;; we have to create a separate readme section without an image.
+  (@short-usage section)
+  (@api section))
 
 
 (defsection @installation (:title "Installation")
@@ -80,9 +107,60 @@ You can install this library from Quicklisp, but you want to receive updates qui
 """)
 
 
+(defsection @short-usage (:title "Usage")
+  "
+Use DEFDIAGRAM macro to define a diagram:
+
+```
+(defdiagram @demo ()
+  \"
+@startuml
+Bob -> Alice : hello
+@enduml
+\")
+```
+
+Then you can include this diagram into a documentation section:
+
+```
+(defsection @example (:title \"Example\")
+  \"Here is our diagram:\"
+  (@demo diagram))
+```
+")
+
+
 (defsection @usage (:title "Usage")
   "
-TODO: Write a library description. Put some examples here.
+Use DEFDIAGRAM macro to define a diagram:
+
+```
+(defdiagram @demo ()
+  \"
+@startuml
+Bob -> Alice : hello
+@enduml
+\")
+```
+
+Then you can include this diagram into a documentation section:
+
+```
+(defsection @example (:title \"Example\")
+  \"Here is our diagram:\"
+  (@demo diagram))
+```
+
+and image will be rendered like this:
+"
+  (@demo diagram))
+
+
+(defdiagram @demo ()
+  "
+@startuml
+Bob -> Alice : hello
+@enduml
 ")
 
 
