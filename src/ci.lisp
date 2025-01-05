@@ -6,7 +6,9 @@
   (:import-from #:40ants-ci/jobs/docs
                 #:build-docs)
   (:import-from #:40ants-ci/workflow
-                #:defworkflow))
+                #:defworkflow)
+  (:import-from #:40ants-ci/steps/sh
+                #:sh))
 (in-package #:40ants-doc-plantuml-ci/ci)
 
 
@@ -26,7 +28,10 @@
   :by-cron "0 10 * * 1"
   :on-pull-request t
   :cache t
-  :jobs ((build-docs :asdf-system "40ants-doc-plantuml-docs")))
+  :jobs ((build-docs :asdf-system "40ants-doc-plantuml-docs"
+                     :steps (list
+                             (sh "Install PlantUML"
+                                 "sudo apt-get install -y plantuml")))))
 
 
 (defworkflow ci
