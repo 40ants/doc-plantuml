@@ -5,13 +5,13 @@
                 #:define-locative-type)
   (:import-from #:40ants-doc/locatives
                 #:diagram)
+  (:import-from #:common-doc)
   (:import-from #:40ants-doc-full/commondoc/builder
                 #:to-commondoc)
   (:import-from #:str
                 #:trim)
   (:import-from #:serapeum
                 #:fmt)
-  (:import-from #:40ants-doc-full/builder/vars)
   (:import-from #:40ants-doc-full/commondoc/image
                 #:local-image)
   (:import-from #:40ants-plantuml)
