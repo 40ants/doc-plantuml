@@ -81,7 +81,7 @@ and image will be rendered like this:
 
 <a id="x-28-23A-28-2819-29-20BASE-CHAR-20-2E-20-2240ANTS-DOC-PLANTUML-22-29-20PACKAGE-29"></a>
 
-#### [package](d205) `40ants-doc-plantuml`
+#### [package](7722) `40ants-doc-plantuml`
 
 <a id="x-2840ANTS-DOC-PLANTUML-DOCS-2FINDEX-3A-3A-7C-4040ANTS-DOC-PLANTUML-3FMacros-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -89,7 +89,7 @@ and image will be rendered like this:
 
 <a id="x-2840ANTS-DOC-PLANTUML-3ADEFDIAGRAM-20-2840ANTS-DOC-2FLOCATIVES-3AMACRO-29-29"></a>
 
-##### [macro](5cbb) `40ants-doc-plantuml:defdiagram` name nil &body code
+##### [macro](842c) `40ants-doc-plantuml:defdiagram` name nil &body code
 
 This macro creates a diagram object and binds it to a variable with given `NAME`.
 
@@ -101,8 +101,8 @@ This could be a simple string or one or more lisp forms.
 [8ebd]: https://40ants.com/doc-plantuml/#x-2840ANTS-DOC-PLANTUML-3ADEFDIAGRAM-20-2840ANTS-DOC-2FLOCATIVES-3AMACRO-29-29
 [a2c9]: https://github.com/40ants/doc-plantuml
 [20ac]: https://github.com/40ants/doc-plantuml/actions
-[d205]: https://github.com/40ants/doc-plantuml/blob/033a6e28b720c00974a7132a5bb0814a74367ddd/src/core.lisp#L1
-[5cbb]: https://github.com/40ants/doc-plantuml/blob/033a6e28b720c00974a7132a5bb0814a74367ddd/src/core.lisp#L38
+[7722]: https://github.com/40ants/doc-plantuml/blob/9ae3e3c6cbecbad7e8b203335faa66148400ca44/src/core.lisp#L1
+[842c]: https://github.com/40ants/doc-plantuml/blob/9ae3e3c6cbecbad7e8b203335faa66148400ca44/src/core.lisp#L38
 [95d4]: https://github.com/40ants/doc-plantuml/issues
 [2c00]: https://quickdocs.org/40ants-doc
 [a797]: https://quickdocs.org/40ants-doc-full
