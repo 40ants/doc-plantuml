@@ -60,7 +60,7 @@ Then you can include this diagram into a documentation section:
 
 <a id="x-28-23A-28-2819-29-20BASE-CHAR-20-2E-20-2240ANTS-DOC-PLANTUML-22-29-20PACKAGE-29"></a>
 
-#### [package](b85c) `40ants-doc-plantuml`
+#### [package](9d6e) `40ants-doc-plantuml`
 
 <a id="x-2840ANTS-DOC-PLANTUML-DOCS-2FINDEX-3A-3A-7C-4040ANTS-DOC-PLANTUML-3FMacros-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -68,7 +68,7 @@ Then you can include this diagram into a documentation section:
 
 <a id="x-2840ANTS-DOC-PLANTUML-3ADEFDIAGRAM-20-2840ANTS-DOC-2FLOCATIVES-3AMACRO-29-29"></a>
 
-##### [macro](a7f6) `40ants-doc-plantuml:defdiagram` name nil &body code
+##### [macro](869d) `40ants-doc-plantuml:defdiagram` name nil &body code
 
 This macro creates a diagram object and binds it to a variable with given `NAME`.
 
@@ -80,8 +80,8 @@ This could be a simple string or one or more lisp forms.
 [8ebd]: https://40ants.com/doc-plantuml/#x-2840ANTS-DOC-PLANTUML-3ADEFDIAGRAM-20-2840ANTS-DOC-2FLOCATIVES-3AMACRO-29-29
 [a2c9]: https://github.com/40ants/doc-plantuml
 [20ac]: https://github.com/40ants/doc-plantuml/actions
-[b85c]: https://github.com/40ants/doc-plantuml/blob/5a1fabd2af397f157ab76c45c4dee32ece7c7379/src/core.lisp#L1
-[a7f6]: https://github.com/40ants/doc-plantuml/blob/5a1fabd2af397f157ab76c45c4dee32ece7c7379/src/core.lisp#L40
+[9d6e]: https://github.com/40ants/doc-plantuml/blob/32d6c63d8651b6c62d8562a889caae1624fb62b8/src/core.lisp#L1
+[869d]: https://github.com/40ants/doc-plantuml/blob/32d6c63d8651b6c62d8562a889caae1624fb62b8/src/core.lisp#L38
 [95d4]: https://github.com/40ants/doc-plantuml/issues
 [2c00]: https://quickdocs.org/40ants-doc
 [a797]: https://quickdocs.org/40ants-doc-full
