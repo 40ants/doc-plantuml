@@ -29,12 +29,27 @@ You can install this library from Quicklisp, but you want to receive updates qui
                       :prompt nil)
 (ql:quickload :40ants-doc-plantuml)
 ```
-<a id="x-2840ANTS-DOC-PLANTUML-DOCS-2FINDEX-3A-3A-40USAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
+<a id="x-2840ANTS-DOC-PLANTUML-DOCS-2FINDEX-3A-3A-40SHORT-USAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 ## Usage
 
-`TODO`: Write a library description. Put some examples here.
+Use [`defdiagram`][8ebd] macro to define a diagram:
 
+```
+(defdiagram @demo ()
+  "
+@startuml
+Bob -> Alice : hello
+@enduml
+")
+```
+Then you can include this diagram into a documentation section:
+
+```
+(defsection @example (:title "Example")
+  "Here is our diagram:"
+  (@demo diagram))
+```
 <a id="x-2840ANTS-DOC-PLANTUML-DOCS-2FINDEX-3A-3A-40API-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 ## API
@@ -45,7 +60,7 @@ You can install this library from Quicklisp, but you want to receive updates qui
 
 <a id="x-28-23A-28-2819-29-20BASE-CHAR-20-2E-20-2240ANTS-DOC-PLANTUML-22-29-20PACKAGE-29"></a>
 
-#### [package](d43d) `40ants-doc-plantuml`
+#### [package](b85c) `40ants-doc-plantuml`
 
 <a id="x-2840ANTS-DOC-PLANTUML-DOCS-2FINDEX-3A-3A-7C-4040ANTS-DOC-PLANTUML-3FMacros-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -53,14 +68,20 @@ You can install this library from Quicklisp, but you want to receive updates qui
 
 <a id="x-2840ANTS-DOC-PLANTUML-3ADEFDIAGRAM-20-2840ANTS-DOC-2FLOCATIVES-3AMACRO-29-29"></a>
 
-##### [macro](acce) `40ants-doc-plantuml:defdiagram` name nil &body code
+##### [macro](a7f6) `40ants-doc-plantuml:defdiagram` name nil &body code
+
+This macro creates a diagram object and binds it to a variable with given `NAME`.
+
+Forms given in the body, should return a string in the format of `PlantUML` diagram.
+This could be a simple string or one or more lisp forms.
 
 
 [30dd]: https://40ants.com/doc-plantuml
+[8ebd]: https://40ants.com/doc-plantuml/#x-2840ANTS-DOC-PLANTUML-3ADEFDIAGRAM-20-2840ANTS-DOC-2FLOCATIVES-3AMACRO-29-29
 [a2c9]: https://github.com/40ants/doc-plantuml
 [20ac]: https://github.com/40ants/doc-plantuml/actions
-[d43d]: https://github.com/40ants/doc-plantuml/blob/9002d82ffb4662aafe3a64b5e1a708d48401c39a/src/core.lisp#L1
-[acce]: https://github.com/40ants/doc-plantuml/blob/9002d82ffb4662aafe3a64b5e1a708d48401c39a/src/core.lisp#L32
+[b85c]: https://github.com/40ants/doc-plantuml/blob/5a1fabd2af397f157ab76c45c4dee32ece7c7379/src/core.lisp#L1
+[a7f6]: https://github.com/40ants/doc-plantuml/blob/5a1fabd2af397f157ab76c45c4dee32ece7c7379/src/core.lisp#L40
 [95d4]: https://github.com/40ants/doc-plantuml/issues
 [2c00]: https://quickdocs.org/40ants-doc
 [a797]: https://quickdocs.org/40ants-doc-full
